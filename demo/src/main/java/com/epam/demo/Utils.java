@@ -1,6 +1,6 @@
 package com.epam.demo;
 
-import org.apache.commons.lang3.math.NumberUtils;
+import com.epam.utils.StringUtils;
 
 import java.util.List;
 
@@ -8,6 +8,6 @@ import java.util.List;
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
        return args.stream()
-               .allMatch(arg -> NumberUtils.isCreatable(arg) && NumberUtils.toDouble(arg)>0);
+               .allMatch(StringUtils::isPositiveNumber);
     }
 }
